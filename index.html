@@ -14,6 +14,9 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
     <meta name="description"
         content="Portfolio of Akash Nair - Software Developer specializing in .NET Core, VB.NET, and SQL Server Backend Architecture.">
     <meta name="keywords"
@@ -21,767 +24,16 @@
     <meta name="author" content="Akash Nair">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://your-website-url.com/">
+    <meta property="og:url" content="https://akashnairportfolio.vercel.app/">
     <meta property="og:title" content="Akash Nair | Software Developer">
     <meta property="og:description"
         content="Backend specialist with 3 years of experience in .NET Core, VB.NET, and large-scale Government CRM systems.">
-    <meta property="og:image" content="https://your-website-url.com/preview-image.png">
+    <meta property="og:image" content="https://akashnairportfolio.vercel.app/favicon.png">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="Akash Nair | Software Developer">
     <meta property="twitter:description"
         content="Backend specialist with 3 years of experience in .NET Core, VB.NET, and large-scale Government CRM systems.">
-
-    <style>
-        :root {
-            /* Professional "IDE" Color Palette */
-            --bg-dark: #0b0e14;
-            --bg-surface: #151921;
-            --bg-surface-trans: rgba(21, 25, 33, 0.7);
-
-            --accent-primary: #00df9a;
-            /* Electric Teal - Represents Success/Clean Code */
-            --accent-secondary: #64748b;
-            /* Slate - Represents Structure */
-            --accent-glow: rgba(0, 223, 154, 0.15);
-
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-
-            --border-color: rgba(255, 255, 255, 0.08);
-            --glass-blur: 12px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            /* Tech Grid Background Pattern */
-            background-image:
-                linear-gradient(var(--border-color) 1px, transparent 1px),
-                linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
-
-        /* Decorative Glows */
-        .glow-spot {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 223, 154, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .glow-1 {
-            top: -100px;
-            left: -100px;
-        }
-
-        .glow-2 {
-            bottom: -100px;
-            right: -100px;
-        }
-
-        /* Layout Utilities */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        section {
-            padding: 6rem 0;
-        }
-
-        /* Typography Utilities */
-        h1,
-        h2,
-        h3 {
-            font-family: 'Outfit', sans-serif;
-            color: var(--text-main);
-        }
-
-        .mono {
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .text-accent {
-            color: var(--accent-primary);
-        }
-
-        /* --- Navigation --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(11, 14, 20, 0.85);
-            backdrop-filter: blur(var(--glass-blur));
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            /* Lower than Mobile Menu */
-            padding: 1rem 0;
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            letter-spacing: -1px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--text-main);
-        }
-
-        .logo i {
-            color: var(--accent-primary);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--text-main);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-primary);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            color: var(--text-main);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background: var(--accent-glow);
-            color: var(--accent-primary);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(0, 223, 154, 0.3);
-        }
-
-        .hero-title {
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-title span {
-            background: linear-gradient(to right, #fff, #94a3b8);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            max-width: 500px;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .btn {
-            padding: 0.9rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-primary {
-            background: var(--accent-primary);
-            color: var(--bg-dark);
-        }
-
-        .btn-primary:hover {
-            background: #00b37a;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
-        }
-
-        /* Hero Terminal Graphic */
-        .terminal-card {
-            background: var(--bg-surface);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-            font-family: 'JetBrains Mono', monospace;
-            position: relative;
-            transition: transform 0.3s;
-        }
-
-        .terminal-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .terminal-header {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 10px 15px;
-            display: flex;
-            gap: 8px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .dot-red {
-            background: #ff5f56;
-        }
-
-        .dot-yellow {
-            background: #ffbd2e;
-        }
-
-        .dot-green {
-            background: #27c93f;
-        }
-
-        .terminal-body {
-            padding: 20px;
-            font-size: 0.9rem;
-            color: #a9b7c6;
-        }
-
-        .code-line {
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .kwd {
-            color: #cc7832;
-        }
-
-        .str {
-            color: #6a8759;
-        }
-
-        .fn {
-            color: #ffc66d;
-        }
-
-        .cls {
-            color: var(--accent-primary);
-        }
-
-        /* --- Section Header Style --- */
-        .section-header {
-            margin-bottom: 4rem;
-        }
-
-        .section-label {
-            color: var(--accent-primary);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-        }
-
-        /* --- Skills Grid --- */
-        .skills-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: var(--bg-surface-trans);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: 0.3s;
-        }
-
-        .skill-category:hover {
-            border-color: var(--accent-primary);
-            box-shadow: 0 10px 30px -10px rgba(0, 223, 154, 0.1);
-        }
-
-        .category-title {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .skill-tag {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            border: 1px solid transparent;
-            transition: 0.3s;
-        }
-
-        .skill-tag:hover {
-            background: var(--accent-glow);
-            color: var(--accent-primary);
-            border-color: rgba(0, 223, 154, 0.3);
-        }
-
-        /* --- Experience Timeline --- */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background: var(--border-color);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 3rem;
-            padding-bottom: 3rem;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: -5px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            background: var(--bg-dark);
-            border: 2px solid var(--accent-primary);
-            border-radius: 50%;
-        }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 0.5rem;
-        }
-
-        .job-title {
-            font-size: 1.3rem;
-            color: var(--text-main);
-        }
-
-        .job-company {
-            color: var(--accent-primary);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.95rem;
-        }
-
-        .job-date {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .job-desc {
-            margin-top: 1rem;
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        .job-desc li {
-            margin-bottom: 0.5rem;
-            list-style-position: inside;
-            padding-left: 1rem;
-            text-indent: -1rem;
-        }
-
-        .job-desc li::before {
-            content: "▹";
-            color: var(--accent-primary);
-            margin-right: 8px;
-        }
-
-        /* --- Projects Cards --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--bg-surface-trans);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: 0.3s;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-card:hover {
-            transform: translateY(-7px);
-            border-color: var(--text-muted);
-        }
-
-        .project-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1rem;
-        }
-
-        .folder-icon {
-            font-size: 2rem;
-            color: var(--accent-primary);
-        }
-
-        .project-links a {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            margin-left: 15px;
-            transition: color 0.3s;
-        }
-
-        .project-links a:hover {
-            color: var(--accent-primary);
-        }
-
-        .project-title {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .project-tech-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        /* --- Contact Section --- */
-        .contact-container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .contact-header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .contact-header p {
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-        }
-
-        .modern-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-
-        .form-group label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--accent-primary);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .modern-form input,
-        .modern-form textarea {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1rem;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            color: #fff;
-            transition: all 0.3s ease;
-        }
-
-        /* Autofill Fix for Chrome/Edge */
-        .modern-form input:-webkit-autofill,
-        .modern-form textarea:-webkit-autofill {
-            -webkit-box-shadow: 0 0 0 30px #0b0e14 inset !important;
-            -webkit-text-fill-color: white !important;
-            caret-color: white;
-        }
-
-        .modern-form input:focus,
-        .modern-form textarea:focus {
-            outline: none;
-            border-color: var(--accent-primary);
-            background: rgba(0, 223, 154, 0.05);
-            box-shadow: 0 0 0 4px rgba(0, 223, 154, 0.1);
-        }
-
-        .modern-form textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            width: 100%;
-            justify-content: center;
-            margin-top: 0.5rem;
-            padding: 1rem;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Animation for Paper Plane */
-        .submit-btn i {
-            transition: transform 0.3s ease;
-        }
-
-        .submit-btn:hover i {
-            transform: translateX(5px) translateY(-3px);
-        }
-
-        .status-msg {
-            margin-top: 1.5rem;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            display: none;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .social-row {
-            margin-top: 3rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .social-row a {
-            font-size: 1.5rem;
-            color: var(--text-muted);
-            transition: 0.3s;
-        }
-
-        .social-row a:hover {
-            color: var(--accent-primary);
-            transform: translateY(-3px);
-        }
-
-        .success {
-            background: rgba(0, 223, 154, 0.2);
-            color: var(--accent-primary);
-        }
-
-        .error {
-            background: rgba(239, 68, 68, 0.2);
-            color: #ef4444;
-        }
-
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 3rem 0;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: 4rem;
-        }
-
-        /* --- Responsive --- */
-        @media (max-width: 768px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 3rem;
-            }
-
-            .hero-title {
-                font-size: 3rem;
-            }
-
-            .hero-subtitle {
-                margin: 0 auto 2.5rem;
-            }
-
-            .btn-group {
-                justify-content: center;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .terminal-card {
-                max-width: 400px;
-                margin: 0 auto;
-                text-align: left;
-            }
-
-            .contact-container {
-                padding: 1.5rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Mobile Nav Overlay */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-dark);
-            z-index: 2000;
-            /* Fixed Layering */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            transform: translateX(100%);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-
-        .mobile-menu a {
-            color: var(--text-main);
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-    </style>
 </head>
 
 <body>
@@ -826,7 +78,8 @@
                     <div class="btn-group">
                         <a href="#projects" class="btn btn-primary">View Work <i
                                 class="fa-solid fa-arrow-right"></i></a>
-                        <a href="Akash Nair DotNet Developer Resume.pdf" download class="btn btn-outline">Resume <i
+                        <a href="./Akash_Nair_DotNet_Developer_Resume.pdf" download="Akash_Nair_Resume.pdf"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-outline">Resume <i
                                 class="fa-solid fa-download"></i></a>
                     </div>
                 </div>
@@ -879,6 +132,11 @@
                     My expertise lies in <strong>Backend Development</strong> using .NET Core and VB.NET, along with
                     advanced <strong>Database Optimization</strong> in MS SQL Server. I thrive in Agile environments,
                     handling everything from API development to security audit fixes and legacy code refactoring.
+                </p>
+                <p style="margin-top: 1.5rem;">
+                    Outside of work, I love creating new websites and apps using <strong>vibe coding</strong> tools — it
+                    helps me sharpen my <strong>prompt engineering</strong> skills and achieve better results without
+                    technological constraints.
                 </p>
             </div>
         </div>
@@ -1004,7 +262,7 @@
                     <div class="project-top">
                         <i class="fa-regular fa-folder-open folder-icon"></i>
                         <div class="project-links">
-                            <a href="https://eolakh.gujarat.gov.in/" target="_blank"><i
+                            <a href="https://eolakh.gujarat.gov.in/" target="_blank" aria-label="E-olakh Live Site"><i
                                     class="fa-solid fa-external-link-alt"></i></a>
                         </div>
                     </div>
@@ -1024,6 +282,10 @@
                 <div class="project-card">
                     <div class="project-top">
                         <i class="fa-regular fa-folder-open folder-icon"></i>
+                        <div class="project-links">
+                            <a href="https://www.vidyalayaschoolsoftware.com" target="_blank"
+                                aria-label="Vidyalaya Live Site"><i class="fa-solid fa-external-link-alt"></i></a>
+                        </div>
                     </div>
                     <h3 class="project-title">Vidyalya CRM</h3>
                     <p class="project-desc">
@@ -1042,18 +304,20 @@
                     <div class="project-top">
                         <i class="fa-regular fa-folder-open folder-icon"></i>
                         <div class="project-links">
-                            <a href="#"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://github.com/akashnair14" target="_blank" aria-label="GitHub Profile"><i
+                                    class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
                     <h3 class="project-title">Side Project / Research</h3>
                     <p class="project-desc">
-                        Personal development work focusing on modern AI tools and automation to stay ahead of industry
-                        trends.
+                        Personal development work focusing on AI vibe coding using modern AI tools to rapidly build and
+                        ship applications.
                     </p>
                     <div class="project-tech-list">
-                        <span>AI/LLM</span>
-                        <span>Automation</span>
-                        <span>Python</span>
+                        <span>AI Vibe Coding</span>
+                        <span>ChatGPT</span>
+                        <span>Loveable AI</span>
+                        <span>Claude AI</span>
                     </div>
                 </div>
             </div>
@@ -1108,129 +372,24 @@
                 </form>
 
                 <div class="social-row">
-                    <a href="https://www.linkedin.com/in/akashnair14" target="_blank"><i
+                    <a href="https://github.com/akashnair14" target="_blank" aria-label="GitHub Profile"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/akashnair14" target="_blank" aria-label="LinkedIn Profile"><i
                             class="fa-brands fa-linkedin"></i></a>
-                    <a href="mailto:nairakash128@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="tel:+919499592318"><i class="fa-solid fa-phone"></i></a>
+                    <a href="mailto:nairakash128@gmail.com" aria-label="Send Email"><i
+                            class="fa-solid fa-envelope"></i></a>
+                    <a href="tel:+919499592318" aria-label="Call Phone"><i class="fa-solid fa-phone"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p class="mono">Designed & Built by Akash Nair © 2025</p>
+        <p class="mono">Designed & Built by Akash Nair &copy; <span id="copyright-year"></span></p>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.querySelectorAll('.menu-toggle');
-        const mobileMenu = document.querySelector('.mobile-menu');
-
-        function toggleMenu() {
-            mobileMenu.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
-        }
-
-        menuToggle.forEach(btn => btn.addEventListener('click', toggleMenu));
-
-        // Reveal Animations on Scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        // Apply animation styles initially
-        document.querySelectorAll('.project-card, .skill-category, .timeline-item, .hero-text, .terminal-card').forEach((el) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1)';
-            observer.observe(el);
-        });
-
-        // Enhanced Form Submission
-        // Enhanced Form Submission Logic for FormSubmit.co
-        document.getElementById('contactForm').addEventListener('submit', async function (e) {
-            e.preventDefault();
-
-            const formStatus = document.getElementById('formStatus');
-            const submitBtn = e.target.querySelector('.submit-btn');
-            const btnText = submitBtn.querySelector('span');
-            const btnIcon = submitBtn.querySelector('i');
-
-            // 1. Get Data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            const honey = document.getElementsByName('_honey')[0].value;
-
-            // 2. Honeypot Check (Spam Prevention)
-            if (honey) return;
-
-            // 3. UI Loading State
-            submitBtn.disabled = true;
-            btnText.textContent = 'Sending...';
-            btnIcon.className = 'fa-solid fa-circle-notch fa-spin';
-            formStatus.style.display = 'none';
-
-            // 4. Construct Data Payload
-            // We explicitly map fields to ensure FormSubmit reads them correctly
-            const formData = {
-                // Visual Fields (What you see in the email table)
-                Name: name,
-                Email: email,
-                Subject: subject,
-                Message: message,
-
-                // FormSubmit Configuration Fields
-                _subject: `Portfolio Contact: ${subject} (from ${name})`, // Custom Subject Line
-                _template: "table", // Clean Table Layout
-                _captcha: "false",  // Disable Captcha popup (relies on Honeypot)
-                _replyto: email     // Allows you to click "Reply" in your email client
-            };
-
-            try {
-                const response = await fetch('https://formsubmit.co/ajax/nairakash128@gmail.com', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
-
-                if (response.ok) {
-                    formStatus.innerHTML = '<i class="fa-solid fa-check-circle"></i> Message sent successfully! I\'ll get back to you soon.';
-                    formStatus.className = 'status-msg success';
-                    formStatus.style.display = 'block';
-                    e.target.reset(); // Clear the form inputs
-                } else {
-                    throw new Error('Server error');
-                }
-            } catch (error) {
-                formStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Failed to send. Please email me directly at nairakash128@gmail.com';
-                formStatus.className = 'status-msg error';
-                formStatus.style.display = 'block';
-            } finally {
-                // 6. Reset Button State
-                submitBtn.disabled = false;
-                btnText.textContent = 'Send Message';
-                btnIcon.className = 'fa-solid fa-paper-plane';
-
-                // Optional: Hide success message after 5 seconds
-                setTimeout(() => {
-                    if (formStatus.classList.contains('success')) {
-                        formStatus.style.display = 'none';
-                    }
-                }, 8000);
-            }
-        });
-    </script>
+    <!-- External Script -->
+    <script src="script.js"></script>
 </body>
 
 </html>
